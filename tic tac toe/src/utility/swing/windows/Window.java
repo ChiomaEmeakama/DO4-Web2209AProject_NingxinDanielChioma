@@ -1,5 +1,7 @@
 package utility.swing.windows;
 
+import GameVirew.GameView;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -33,6 +35,9 @@ public final class Window extends JFrame
         setResizable(resizable);
         setContentPane(contentPane);
         setLocationRelativeTo(null);
+    }
+
+    public Window(String atm, GameView view, boolean resizable) {
     }
 
     @Override
