@@ -1,13 +1,12 @@
-package GameVirew;
+package views;
 
-import Model.Game;
-import utility.swing.components.InputField;
+import models.Game;
 import utility.swing.layout.LayoutHelper;
 
 import javax.swing.*;
 
 
-public class GameView extends JPanel{
+public class MenuView extends JPanel {
 
 
     private final JLabel messageLabel;
@@ -17,34 +16,28 @@ public class GameView extends JPanel{
     private final JButton joinGame;
 
 
+    public MenuView() {
+        messageLabel = new JLabel("Please choose your option");
 
+        localGame = new JButton("Local Game");
 
-    public GameView(Game game){
-    messageLabel=new JLabel("Please choose your option");
+        hostGame = new JButton("Host Game");
+        joinGame = new JButton("Join Game");
 
-    localGame =new JButton("Local Game");
-
-    hostGame =new JButton("Host Game");
-    joinGame =new JButton("Join Game");
-
-    setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-    setBorder(LayoutHelper.createLargeEmptyBorder());
-
-
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setBorder(LayoutHelper.createLargeEmptyBorder());
 
 
     }
 
-    private JPanel createMessagePanel()
-    {
+    private JPanel createMessagePanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
         panel.add(messageLabel);
         return panel;
     }
 
-    private JPanel createButtonsPanel()
-    {
+    private JPanel createButtonsPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
         panel.add(localGame);

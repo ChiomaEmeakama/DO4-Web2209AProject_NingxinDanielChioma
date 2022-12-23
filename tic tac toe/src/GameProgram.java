@@ -1,6 +1,6 @@
-import GameController.GameController;
-import GameVirew.GameView;
-import Model.Game;
+import controllers.MenuController;
+import views.MenuView;
+import models.Game;
 import utility.swing.windows.Window;
 
 import javax.swing.*;
@@ -16,13 +16,11 @@ public class GameProgram {
     {
         //GameProgram gameProgram =new GameProgram();
 
-        GameController gameController = new GameController();
-
-        Game game = new Game();
-
-        GameView view= new GameView(game);
-
+        MenuView view= new MenuView();
         Window window = new Window("ATM", view, false);
+
+        MenuController controller = new MenuController(window);
+
         window.setVisible(true);
     }
 

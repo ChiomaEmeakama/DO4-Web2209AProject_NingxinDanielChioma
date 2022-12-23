@@ -1,6 +1,6 @@
 package utility.swing.windows;
 
-import GameVirew.GameView;
+import views.MenuView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,7 +37,7 @@ public final class Window extends JFrame
         setLocationRelativeTo(null);
     }
 
-    public Window(String atm, GameView view, boolean resizable) {
+    public Window(String atm, MenuView view, boolean resizable) {
     }
 
     @Override
