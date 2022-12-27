@@ -14,7 +14,6 @@ public class GameProgram {
 
     private static void start()
     {
-        //GameProgram gameProgram =new GameProgram();
 
         MenuView view= new MenuView();
         Window window = new Window("Menu", view, false);
