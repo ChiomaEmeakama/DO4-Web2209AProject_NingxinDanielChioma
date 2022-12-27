@@ -10,10 +10,9 @@ public class Game {
         squares = new Square[3][3];
         listeners = new ArrayList<>();
         // TODO: Initialize squares to be empty
-        for(Square[] square : squares){
-          for(Square square1: square) {
-              square1 = Square.Empty;
-              System.out.println(square1);
+        for(Square[] squareRow : squares){
+          for(Square square: squareRow) {
+              square = Square.Empty;
           }
         }
     }

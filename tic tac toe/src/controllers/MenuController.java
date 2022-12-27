@@ -1,6 +1,7 @@
 package controllers;
 
 import utility.swing.windows.Window;
+import views.MenuView;
 
 import java.awt.event.ActionEvent;
 
@@ -10,11 +11,12 @@ public class MenuController {
 
     public MenuController(Window window)
     {
+
         this.window = window;
+
     }
 
     private void onLocalClicked(ActionEvent e)
     {
-
     }
 }

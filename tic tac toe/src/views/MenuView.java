@@ -27,6 +27,16 @@ public class MenuView extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBorder(LayoutHelper.createLargeEmptyBorder());
 
+        add(messageLabel);
+        add(LayoutHelper.createRigidArea());
+        add(localGame);
+        add(LayoutHelper.createRigidArea());
+        add(hostGame);
+        add(LayoutHelper.createRigidArea());
+        add(joinGame);
+        add(LayoutHelper.createRigidArea());
+        add(createButtonsPanel());
+        add(createMessagePanel());
 
     }
 
