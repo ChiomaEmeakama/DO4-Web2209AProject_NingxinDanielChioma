@@ -1,5 +1,25 @@
 package models;
 
 public enum Square {
-    Empty, X, O
+
+    X("X"),
+    O("O"),
+    NONE(" ");
+
+    String square;
+
+    Square(String square) {
+        this.square = square;
+    }
+
+    public String getSquare() {
+        return square;
+    }
+
+    @Override
+    public String toString() {
+        return square;
+    }
+
 }
+
