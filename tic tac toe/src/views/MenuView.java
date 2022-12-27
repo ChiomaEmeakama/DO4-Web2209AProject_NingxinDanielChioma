@@ -6,7 +6,7 @@ import utility.swing.layout.LayoutHelper;
 import javax.swing.*;
 
 
-public class MenuView extends JPanel {
+public class MenuView extends Jpanel {
 
 
     private final JLabel messageLabel;
