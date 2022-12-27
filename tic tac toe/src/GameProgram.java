@@ -1,4 +1,5 @@
 import controllers.MenuController;
+import utility.swing.style.StyleHelper;
 import views.MenuView;
 import models.Game;
 import utility.swing.windows.Window;
@@ -15,10 +16,11 @@ public class GameProgram {
     private static void start()
     {
 
+
         MenuView view= new MenuView();
         Window window = new Window("Menu", view, false);
 
-        MenuController controller = new MenuController(window);
+        MenuController controller = new MenuController(view,window);
 
 
         window.setVisible(true);

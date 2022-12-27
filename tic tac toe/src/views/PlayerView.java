@@ -1,3 +1,6 @@
 package views;
 
-public class PlayerView {}
+public class PlayerView {
+
+
+}
