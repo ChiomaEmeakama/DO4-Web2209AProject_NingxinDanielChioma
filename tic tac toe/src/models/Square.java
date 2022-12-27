@@ -4,7 +4,7 @@ public enum Square {
 
     X("X"),
     O("O"),
-    NONE(" ");
+    Empty("");
 
     String square;
 
