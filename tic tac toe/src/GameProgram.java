@@ -20,6 +20,7 @@ public class GameProgram {
 
         MenuController controller = new MenuController(window);
 
+
         window.setVisible(true);
     }
 
