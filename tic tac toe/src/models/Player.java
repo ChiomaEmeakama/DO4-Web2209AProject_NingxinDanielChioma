@@ -1,15 +1,12 @@
 package models;
 
-import java.awt.*;
-
 public class Player  {
     private String name;
-    private Square square;
-    private int wins;
+    private int score;
 
-    public Player(String name, Square square) {
+
+    public Player(String name ) {
         this.name = name;
-        this.square=square;
     }
 
     public String getName() {
@@ -20,28 +17,22 @@ public class Player  {
         this.name = name;
     }
 
-    public Square getSquare() {
-        return square;
+
+
+    public int getScore() {
+        return score;
     }
 
-    public void setSquare(Square square) {
-        this.square = square;
+    public void incrementScore() {
+        score++;
     }
 
-    public int getWins() {
-        return wins;
-    }
 
-    public void setWins(int wins) {
-        this.wins = wins;
+    public void resetScore() {
+        score = 0;
     }
-
-    public void incrementWins() {
-        wins++;
-    }
-
-    public void resetWins() {
-        wins = 0;
+    public void resetName(){
+        name="";
     }
 }
 

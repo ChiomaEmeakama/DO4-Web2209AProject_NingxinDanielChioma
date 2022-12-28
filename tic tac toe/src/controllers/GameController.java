@@ -32,39 +32,77 @@ public class GameController {
     private void on0BottomClicked(ActionEvent event)
     {
         game.setSquares(0);
+        if(!game.checkEmpty(0))
+            view.disableButton(0);
+        if(game.checkWinnerO()){
+            view.displayWinner(game.getPlayerOName());
+
+        }else if(game.checkWinnerX()){
+            //todo
+            view.displayWinner(game.getPlayerOName());
+
+        }
+
+
+
 
     }
     private void on1BottomClicked(ActionEvent event)
     {
         game.setSquares(1);
 
+        if(!game.checkEmpty(1))
+            view.disableButton(1);
+
+
     }private void on2BottomClicked(ActionEvent event)
     {
         game.setSquares(2);
+
+        if(!game.checkEmpty(2))
+            view.disableButton(2);
 
     }private void on3BottomClicked(ActionEvent event)
     {game.setSquares(3);
 
 
+        if(!game.checkEmpty(3))
+            view.disableButton(3);
+
     }private void on4BottomClicked(ActionEvent event)
     {
         game.setSquares(4);
+
+        if(!game.checkEmpty(4))
+            view.disableButton(4);
 
     }private void on5BottomClicked(ActionEvent event)
     {
 
         game.setSquares(5);
+
+        if(!game.checkEmpty(5))
+            view.disableButton(5);
     }private void on6BottomClicked(ActionEvent event)
     {
 
         game.setSquares(6);
+
+        if(!game.checkEmpty(6))
+            view.disableButton(6);
     }private void on7BottomClicked(ActionEvent event)
     {
         game.setSquares(7);
 
+        if(!game.checkEmpty(7))
+            view.disableButton(7);
+
     }private void on8BottomClicked(ActionEvent event)
     {
         game.setSquares(8);
+
+        if(!game.checkEmpty(8))
+            view.disableButton(8);
 
     }
 
