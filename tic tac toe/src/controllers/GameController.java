@@ -32,14 +32,16 @@ public class GameController {
     private void on0BottomClicked(ActionEvent event)
     {
         game.setSquares(0);
-        if(!game.checkEmpty(0))
-            view.disableButton(0);
+
+        view.disableButton(0);
+
+
         if(game.checkWinnerO()){
             view.displayWinner(game.getPlayerOName());
 
         }else if(game.checkWinnerX()){
             //todo
-            view.displayWinner(game.getPlayerOName());
+            view.displayWinner(game.getPlayerXName());
 
         }else if(game.canDraw())
             view.displayDraw();

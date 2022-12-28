@@ -46,7 +46,8 @@ public class Game {
         else turn = Square.O;
     }
 
-    private Square setButton(int position) {
+    private Square getSquare(int position) {
+
 
         switch (whoIsTurn()) {
             case "x":
@@ -96,50 +97,40 @@ public class Game {
                 if((square==Square.Empty))
                     counter++;
         }
-        if(counter>=1)
-        return false;
-        else return true;
+        return counter == 0;
     }
 
     public void setSquares(int position) {
         try {
             switch (position) {
                 case 0:
-                    squares[0][0] = setButton(position);
+                    squares[0][0] = getSquare(position);
 
-                        changeTheTurn();
                     break;
                 case 1:
-                    squares[0][1] = setButton(position);
-                    changeTheTurn();
+                    squares[0][1] = getSquare(position);
                     break;
                 case 2:
-                    squares[0][2] = setButton(position);
-                    changeTheTurn();
+                    squares[0][2] = getSquare(position);
                     break;
                 case 3:
-                    squares[1][0] = setButton(position);
-                    changeTheTurn();
+                    squares[1][0] = getSquare(position);
                     break;
                 case 4:
-                    squares[1][1] = setButton(position);
-                    changeTheTurn();
+                    squares[1][1] = getSquare(position);
                     break;
                 case 5:
-                    squares[1][2] = setButton(position);
-                    changeTheTurn();
+                    squares[1][2] = getSquare(position);
                     break;
                 case 6:
-                    squares[2][0] = setButton(position);
-                    changeTheTurn();
+                    squares[2][0] = getSquare(position);
                     break;
                 case 7:
-                    squares[2][1] = setButton(position);
-                    changeTheTurn();
+                    squares[2][1] = getSquare(position);
                     break;
                 case 8:
-                    squares[2][2] = setButton(position);
-                    changeTheTurn();
+                    squares[2][2] = getSquare(position);
+
                     break;
 
 
@@ -147,60 +138,26 @@ public class Game {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+                changeTheTurn();
 
 
     }
 
     public boolean checkWinnerX() {
-        /*
-        if(squares[0][0]==squares[0][1]&&squares[0][1]==squares[0][2]){
-
-        }*/
-
-
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0,counter = 0; j < 3; j++) {
-                if (squares[i][j] == Square.X)
-                    counter++;
-                if(counter==3) {
-                    playerX.incrementScore();
-                    return true;
-
-                }
-            }
-
-
-        }
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0,counter = 0; j < 3; j++) {
-                if (squares[i][j] == Square.O)
-                    counter++;
-                if(counter==3) {
-                    playerO.incrementScore();
-                    return true;
-
-                }
-            }
-
-
-        }
-        if(squares[0][0]==squares[1][1]&&squares[1][1]==squares[2][2]&&squares[1][1]==Square.X)
-            return true;
-
-        if(squares[0][2]==squares[1][1]&&squares[1][1]==squares[2][0]&&squares[1][1]==Square.X)
-            return true;
-
-        return false;
+        return checkWinner(Square.X, playerX);
     }
     public boolean checkWinnerO(){
+        return checkWinner(Square.O, playerO);
+    }
+
+    private boolean checkWinner(Square square, Player player) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0,counter = 0; j < 3; j++) {
-                if (squares[j][i] == Square.O)
+                if (squares[j][i] == square)
                     counter++;
                 if(counter==3) {
 
-                    playerO.incrementScore();
+                    player.incrementScore();
                     return true;
 
                 }
@@ -210,10 +167,10 @@ public class Game {
         }
         for (int i = 0; i < 3; i++) {
             for (int j = 0,counter = 0; j < 3; j++) {
-                if (squares[j][i] == Square.O)
+                if (squares[j][i] == square)
                     counter++;
                 if(counter==3) {
-                    playerO.incrementScore();
+                    player.incrementScore();
                     return true;
 
                 }
@@ -222,12 +179,9 @@ public class Game {
 
         }
 
-        if(squares[0][0]==squares[1][1]&&squares[1][1]==squares[2][2]&&squares[1][1]==Square.O)
-            return true;
+        if(squares[0][0]==squares[1][1]&&squares[1][1]==squares[2][2]&&squares[1][1]==square) return true;
 
-        if(squares[0][2]==squares[1][1]&&squares[1][1]==squares[2][0]&&squares[1][1]==Square.O)
-            return true;
-        return false;
+        return squares[0][2] == squares[1][1] && squares[1][1] == squares[2][0] && squares[1][1] == square;
     }
 
 

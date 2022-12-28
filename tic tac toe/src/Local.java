@@ -7,6 +7,7 @@ import javax.swing.*;
 
 
 public class Local {
+    //todo reformat in code menu
 
     public static void main(String[] args)
     {

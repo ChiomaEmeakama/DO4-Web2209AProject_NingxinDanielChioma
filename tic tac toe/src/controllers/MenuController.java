@@ -31,7 +31,7 @@ public class MenuController {
     {
         //CREATE A GAME
 
-        StyleHelper.configureLookAndFeel();
+
         Game game = new Game();
         GameView gameView = new GameView(game);
 

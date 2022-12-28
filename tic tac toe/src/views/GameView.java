@@ -23,7 +23,7 @@ public GameView(Game game) {
         turn=Square.X;
 */
 
-
+//it can be done by for loop
         gameField[0][0]=new JButton();
         gameField[0][1]=new JButton();
         gameField[0][2]=new JButton();
