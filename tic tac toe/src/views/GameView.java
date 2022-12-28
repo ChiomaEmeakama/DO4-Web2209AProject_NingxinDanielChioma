@@ -14,7 +14,14 @@ public class GameView extends JPanel {
 public GameView(Game game) {
         gameField = new JButton[3][3];
         JPanel panel = new JPanel();
-
+ /*   private boolean firstTurn;
+  //  private Random firstToPlay;
+    public Game() {
+        squares = new Square[3][3];
+        listeners = new ArrayList<>();
+     //   firstToPlay = new Random(); //input first turn's code TODO
+        turn=Square.X;
+*/
         setLayout(new GridLayout(3,3));
 
 
@@ -50,10 +57,19 @@ public GameView(Game game) {
 
     public JPanel displayWinner(String name){
     JPanel winnerPanel=new JPanel();
-        JLabel label=new JLabel("winner is : "+name);
-        winnerPanel.add(label);
-        return winnerPanel;
+    winnerPanel.setLayout(new BoxLayout(winnerPanel, BoxLayout.X_AXIS));
+    JLabel label=new JLabel("winner is : "+name);
+    winnerPanel.add(label);
+    return winnerPanel;
 }
+public JPanel displayDraw(){
+   JPanel drawPanel = new JPanel();
+    drawPanel.setLayout(new BoxLayout(drawPanel, BoxLayout.X_AXIS));
+    JLabel label=new JLabel("we have no winner / draw");
+    drawPanel.add(label);
+    return drawPanel;
+}
+
     public void disableButton(int position){
         switch (position) {
             case 0:

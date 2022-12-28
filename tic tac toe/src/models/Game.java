@@ -89,6 +89,17 @@ public class Game {
 
         }
     }
+    public boolean canDraw(){
+        int counter =0;
+        for(Square[] row:squares){
+            for(Square square : row)
+                if((square==Square.Empty))
+                    counter++;
+        }
+        if(counter>=1)
+        return false;
+        else return true;
+    }
 
     public void setSquares(int position) {
         try {

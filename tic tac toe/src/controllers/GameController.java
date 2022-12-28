@@ -41,8 +41,10 @@ public class GameController {
             //todo
             view.displayWinner(game.getPlayerOName());
 
-        }
+        }else if(game.canDraw())
+            view.displayDraw();
 
+        window.resizeToFitContent();
 
 
 
@@ -53,7 +55,18 @@ public class GameController {
 
         if(!game.checkEmpty(1))
             view.disableButton(1);
+        if(game.checkWinnerO()){
+            view.displayWinner(game.getPlayerOName());
 
+        }else if(game.checkWinnerX()){
+            //todo
+            view.displayWinner(game.getPlayerOName());
+
+        }else if(game.canDraw())
+            view.displayDraw();
+
+
+        window.resizeToFitContent();
 
     }private void on2BottomClicked(ActionEvent event)
     {
@@ -61,13 +74,36 @@ public class GameController {
 
         if(!game.checkEmpty(2))
             view.disableButton(2);
+        if(game.checkWinnerO()){
+            view.displayWinner(game.getPlayerOName());
 
+        }else if(game.checkWinnerX()){
+            //todo
+            view.displayWinner(game.getPlayerOName());
+
+        }else if(game.canDraw())
+            view.displayDraw();
+
+
+        window.resizeToFitContent();
     }private void on3BottomClicked(ActionEvent event)
     {game.setSquares(3);
 
 
         if(!game.checkEmpty(3))
             view.disableButton(3);
+        if(game.checkWinnerO()){
+            view.displayWinner(game.getPlayerOName());
+
+        }else if(game.checkWinnerX()){
+            //todo
+            view.displayWinner(game.getPlayerOName());
+
+        }else if(game.canDraw())
+            view.displayDraw();
+
+
+        window.resizeToFitContent();
 
     }private void on4BottomClicked(ActionEvent event)
     {
@@ -75,34 +111,89 @@ public class GameController {
 
         if(!game.checkEmpty(4))
             view.disableButton(4);
+        if(game.checkWinnerO()){
+            view.displayWinner(game.getPlayerOName());
 
+        }else if(game.checkWinnerX()){
+            //todo
+            view.displayWinner(game.getPlayerOName());
+
+        }else if(game.canDraw())
+            view.displayDraw();
+
+
+        window.resizeToFitContent();
     }private void on5BottomClicked(ActionEvent event)
     {
 
         game.setSquares(5);
 
         if(!game.checkEmpty(5))
-            view.disableButton(5);
+            view.disableButton(5);if(game.checkWinnerO()){
+        view.displayWinner(game.getPlayerOName());
+
+    }else if(game.checkWinnerX()){
+        //todo
+        view.displayWinner(game.getPlayerOName());
+
+    }else if(game.canDraw())
+        view.displayDraw();
+
+
+        window.resizeToFitContent();
     }private void on6BottomClicked(ActionEvent event)
     {
 
         game.setSquares(6);
 
         if(!game.checkEmpty(6))
-            view.disableButton(6);
+            view.disableButton(6);if(game.checkWinnerO()){
+        view.displayWinner(game.getPlayerOName());
+
+    }else if(game.checkWinnerX()){
+        //todo
+        view.displayWinner(game.getPlayerOName());
+
+    }else if(game.canDraw())
+        view.displayDraw();
+
+
+        window.resizeToFitContent();
     }private void on7BottomClicked(ActionEvent event)
     {
         game.setSquares(7);
 
         if(!game.checkEmpty(7))
-            view.disableButton(7);
+            view.disableButton(7);if(game.checkWinnerO()){
+        view.displayWinner(game.getPlayerOName());
+
+    }else if(game.checkWinnerX()){
+        //todo
+        view.displayWinner(game.getPlayerOName());
+
+    }else if(game.canDraw())
+        view.displayDraw();
+
+
+        window.resizeToFitContent();
 
     }private void on8BottomClicked(ActionEvent event)
     {
         game.setSquares(8);
 
         if(!game.checkEmpty(8))
-            view.disableButton(8);
+            view.disableButton(8);if(game.checkWinnerO()){
+        view.displayWinner(game.getPlayerOName());
+
+    }else if(game.checkWinnerX()){
+        //todo
+        view.displayWinner(game.getPlayerOName());
+
+    }else if(game.canDraw())
+        view.displayDraw();
+
+
+        window.resizeToFitContent();
 
     }
 
