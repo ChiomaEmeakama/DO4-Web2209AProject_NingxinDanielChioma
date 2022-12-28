@@ -1,7 +1,5 @@
 package utility.swing.windows;
 
-import views.MenuView;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -31,13 +29,10 @@ public final class Window extends JFrame
     {
         super(title);
 
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(resizable);
         setContentPane(contentPane);
         setLocationRelativeTo(null);
-    }
-
-    public Window(String atm, MenuView view, boolean resizable) {
     }
 
     @Override

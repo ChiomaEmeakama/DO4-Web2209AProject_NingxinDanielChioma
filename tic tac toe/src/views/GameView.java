@@ -12,13 +12,14 @@ private final JButton[][] gameField;
 public GameView(Game game) {
         gameField = new JButton[3][3];
 
-
+        JPanel panel = new JPanel();
         setLayout(new GridLayout(3,3));
 
         for(JButton[] fields : gameField){
             for(JButton field: fields) {
-                add(field);
+                panel.add(field);
             }
         }
+
     }
 }

@@ -14,11 +14,12 @@ public class MenuController {
     private final Window window;
     public final  MenuView view;
 
+
     public MenuController(MenuView view, Window window)
     {
 
-        this.window = Objects.requireNonNull(window);
         this.view=Objects.requireNonNull(view);
+        this.window = Objects.requireNonNull(window);
 
 
     }
@@ -26,6 +27,15 @@ public class MenuController {
     private void onLocalClicked(ActionEvent e)
     {
         //CREATE A GAME
+
+
+        /*Game game = new Game();
+        GameView gameView = new GameView(game);
+        window.dispose();
+
+        Window gameWindow=new Window(gameView);
+        GameController controller = (game,gameVew, gameWindow);
+*/
 
     }
     private void onJoinClicked(ActionEvent e)

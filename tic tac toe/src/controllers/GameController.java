@@ -19,14 +19,7 @@ private final Window window;
     }
     private void onGameBottomClicked(ActionEvent event)
     {
-        try
-        {
 
-
-        }
-        catch (NumberFormatException e)
-        {
-        }
 
     }
 }

@@ -4,6 +4,7 @@ import models.Game;
 import utility.swing.layout.LayoutHelper;
 
 import javax.swing.*;
+import java.awt.*;
 
 
 public class MenuView extends JPanel {
@@ -17,15 +18,19 @@ public class MenuView extends JPanel {
 
 
     public MenuView() {
+ /*       JFrame panel=new JFrame();
+        panel.add(new Label("hello"));
+        panel.setVisible(true);*/
+
+
         messageLabel = new JLabel("Please choose your option");
 
         localGame = new JButton("Local Game");
-
         hostGame = new JButton("Host Game");
         joinGame = new JButton("Join Game");
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setBorder(LayoutHelper.createLargeEmptyBorder());
+        //setBorder(LayoutHelper.createLargeEmptyBorder());
 
         add(messageLabel);
         add(LayoutHelper.createRigidArea());
@@ -35,10 +40,11 @@ public class MenuView extends JPanel {
         add(LayoutHelper.createRigidArea());
         add(joinGame);
         add(LayoutHelper.createRigidArea());
-        add(createButtonsPanel());
-        add(createMessagePanel());
+        //add(createButtonsPanel());
+        add(LayoutHelper.createRigidArea());
+       // add(createMessagePanel());
 
-        JFrame frame=new JFrame("first way");
+        /*JFrame frame=new JFrame("first way");
 
         // creates instance of JButton
         JButton button = new JButton("let's see");
@@ -58,7 +64,7 @@ public class MenuView extends JPanel {
         frame.setLayout(null);
 
         // makes the frame visible
-        frame.setVisible(true);
+        frame.setVisible(true);*/
 
     }
 
