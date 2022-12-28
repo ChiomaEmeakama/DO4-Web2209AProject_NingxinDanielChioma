@@ -1,17 +1,16 @@
 import controllers.MenuController;
 import utility.swing.style.StyleHelper;
 import views.MenuView;
-import models.Game;
 import utility.swing.windows.Window;
 
 import javax.swing.*;
 
 
-public class GameProgram {
+public class Local {
 
     public static void main(String[] args)
     {
-        SwingUtilities.invokeLater(GameProgram::start);
+        SwingUtilities.invokeLater(Local::start);
     }
 
     private static void start()
@@ -24,6 +23,7 @@ public class GameProgram {
 
         MenuController controller = new MenuController(view,window);
 
+        window.resizeToFitContent();
 
         window.setVisible(true);
     }
