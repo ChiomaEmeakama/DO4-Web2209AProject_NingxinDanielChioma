@@ -140,5 +140,10 @@ public class Game {
 
 
     }
+    public boolean checkWinner(){
+        for(int i=0;i<3;i++){
+        if(squares[i][0]==Square)
+
+    }
 }
 

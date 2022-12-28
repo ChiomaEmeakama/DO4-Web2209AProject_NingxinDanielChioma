@@ -8,19 +8,41 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class GameView extends JFrame {
-private final JButton[][] gameField;
+public class GameView extends JPanel {
+    private final JButton[][] gameField;
 public GameView(Game game) {
         gameField = new JButton[3][3];
 
         JPanel panel = new JPanel();
-        setLayout(new GridLayout(3,3));
 
-        for(JButton[] fields : gameField){
+        setLayout(new GridLayout(3,3));
+    System.out.println("here");
+        gameField[0][0]=new JButton(" ");
+        gameField[0][1]=new JButton(" ");
+        gameField[0][2]=new JButton(" ");
+        gameField[1][0]=new JButton(" ");
+        gameField[1][1]=new JButton(" ");
+        gameField[1][2]=new JButton(" ");
+        gameField[2][0]=new JButton(" ");
+        gameField[2][1]=new JButton(" ");
+        gameField[2][2]=new JButton(" ");
+
+    for(JButton[] fields : gameField){
+        for(JButton field: fields) {
+            panel.add(field);
+
+        }
+    }
+/*
+
+    for(JButton[] fields : gameField){
             for(JButton field: fields) {
+                field=new JButton(" ");
                 panel.add(field);
+
             }
         }
+*/
 
     }
     public void add0BottomClicked(ActionListener listener)

@@ -21,6 +21,7 @@ public class MenuController {
         this.view=Objects.requireNonNull(view);
         this.window = Objects.requireNonNull(window);
 
+        view.addLocalGameListener(this::onLocalClicked);
 
     }
 
@@ -34,6 +35,7 @@ public class MenuController {
 
         Window gameWindow=new Window("local game",gameView,true);
         GameController controller = new GameController (game,gameView,gameWindow);
+
 
         window.dispose();
         gameWindow.setVisible(true);

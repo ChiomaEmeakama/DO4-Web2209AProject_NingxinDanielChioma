@@ -5,6 +5,7 @@ import utility.swing.layout.LayoutHelper;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 
 public class MenuView extends JPanel {
@@ -30,7 +31,7 @@ public class MenuView extends JPanel {
         joinGame = new JButton("Join Game");
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        //setBorder(LayoutHelper.createLargeEmptyBorder());
+        setBorder(LayoutHelper.createLargeEmptyBorder());
 
 
         add(createMessagePanel());
@@ -59,5 +60,9 @@ public class MenuView extends JPanel {
         panel.add(LayoutHelper.createSmallRigidArea());
 
         return panel;
+    }
+    public void addLocalGameListener(ActionListener listener)
+    {
+        localGame.addActionListener(listener);
     }
 }

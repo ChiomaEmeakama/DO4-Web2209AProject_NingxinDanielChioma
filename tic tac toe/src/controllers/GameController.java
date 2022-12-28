@@ -18,6 +18,15 @@ public class GameController {
         this.window=window;
 
 
+        view.add0BottomClicked(this::on0BottomClicked);
+        view.add1BottomClicked(this::on1BottomClicked);
+        view.add2BottomClicked(this::on2BottomClicked);
+        view.add3BottomClicked(this::on3BottomClicked);
+        view.add4BottomClicked(this::on4BottomClicked);
+        view.add5BottomClicked(this::on5BottomClicked);
+        view.add6BottomClicked(this::on6BottomClicked);
+        view.add7BottomClicked(this::on7BottomClicked);
+        view.add8BottomClicked(this::on8BottomClicked);
 
     }
     private void on0BottomClicked(ActionEvent event)
