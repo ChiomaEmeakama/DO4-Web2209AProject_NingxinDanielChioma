@@ -4,44 +4,44 @@ import java.net.Socket;
 
 public class Player implements Runnable {
     private Socket name;
-    private int square;
-    private int wins;
+    private String nameString;
 
-    public Player(Socket name, int square) {
+    private int score;
+
+
+    public Player(Socket name) {
         this.name = name;
-        this.square=square;
+    }
+    public Player(String name){
+        this.nameString=name;
     }
 
-    public Socket getName() {
-        return name;
+    public String getName() {
+        return nameString;
     }
+
 
     public void setName(Socket name) {
         this.name = name;
     }
 
-    public int getSquare() {
-        return square;
+
+
+
+    public int getScore() {
+        return score;
     }
 
-    public void setSquare(int square) {
-        this.square = square;
+    public void setScore(int score) {
+        this.score = score;
     }
 
-    public int getWins() {
-        return wins;
+    public void incrementScore() {
+        score++;
     }
 
-    public void setWins(int wins) {
-        this.wins = wins;
-    }
-
-    public void incrementWins() {
-        wins++;
-    }
-
-    public void resetWins() {
-        wins = 0;
+    public void resetScores() {
+        score = 0;
     }
 
     public void setSuspended(boolean b) {
