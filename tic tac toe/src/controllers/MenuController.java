@@ -2,6 +2,7 @@ package controllers;
 
 import models.Game;
 import models.IGameListener;
+import utility.swing.style.StyleHelper;
 import utility.swing.windows.Window;
 import views.GameView;
 import views.MenuView;
@@ -16,6 +17,7 @@ public class MenuController {
 
 
     public MenuController(MenuView view, Window window)
+
     {
 
         this.view=Objects.requireNonNull(view);
@@ -29,7 +31,7 @@ public class MenuController {
     {
         //CREATE A GAME
 
-
+        StyleHelper.configureLookAndFeel();
         Game game = new Game();
         GameView gameView = new GameView(game);
 
@@ -38,6 +40,8 @@ public class MenuController {
 
 
         window.dispose();
+        gameWindow.resizeToFitContent();
+
         gameWindow.setVisible(true);
     }
     private void onJoinClicked(ActionEvent e)

@@ -13,7 +13,7 @@ public class GameView extends JPanel {
     private final JButton[][] gameField; //grid
 public GameView(Game game) {
         gameField = new JButton[3][3];
-        JPanel panel = new JPanel();
+       // JPanel panel = new JPanel();
  /*   private boolean firstTurn;
   //  private Random firstToPlay;
     public Game() {
@@ -22,7 +22,6 @@ public GameView(Game game) {
      //   firstToPlay = new Random(); //input first turn's code TODO
         turn=Square.X;
 */
-        setLayout(new GridLayout(3,3));
 
 
         gameField[0][0]=new JButton();
@@ -35,9 +34,12 @@ public GameView(Game game) {
         gameField[2][1]=new JButton();
         gameField[2][2]=new JButton();
 
+        setLayout(new GridLayout(3,3));
+        setBorder(LayoutHelper.createLargeEmptyBorder());
+
     for(JButton[] fields : gameField){
         for(JButton field: fields) {
-            panel.add(field);
+           add(field);
 
         }
     }
