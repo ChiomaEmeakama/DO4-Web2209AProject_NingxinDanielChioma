@@ -1,30 +1,30 @@
 package models;
 
-import java.awt.*;
+import java.net.Socket;
 
-public class Player  {
-    private String name;
-    private Square square;
+public class Player implements Runnable {
+    private Socket name;
+    private int square;
     private int wins;
 
-    public Player(String name, Square square) {
+    public Player(Socket name, int square) {
         this.name = name;
         this.square=square;
     }
 
-    public String getName() {
+    public Socket getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(Socket name) {
         this.name = name;
     }
 
-    public Square getSquare() {
+    public int getSquare() {
         return square;
     }
 
-    public void setSquare(Square square) {
+    public void setSquare(int square) {
         this.square = square;
     }
 
@@ -42,6 +42,17 @@ public class Player  {
 
     public void resetWins() {
         wins = 0;
+    }
+
+    public void setSuspended(boolean b) {
+    }
+
+    public void otherPlayerMoved(int location) {
+    }
+
+    @Override
+    public void run() {
+
     }
 }
 
