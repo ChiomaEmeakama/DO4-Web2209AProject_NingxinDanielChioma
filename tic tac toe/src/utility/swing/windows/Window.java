@@ -44,4 +44,10 @@ public final class Window extends JFrame
         pack();
         setMinimumSize(getSize());
     }
+
+    public void resizeToFitContent() {
+        setMinimumSize(zeroSize);
+        pack();
+        setMinimumSize(getSize());
+    }
 }

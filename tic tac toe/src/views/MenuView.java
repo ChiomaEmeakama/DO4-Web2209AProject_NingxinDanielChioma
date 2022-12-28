@@ -5,6 +5,7 @@ import utility.swing.layout.LayoutHelper;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 
 public class MenuView extends JPanel {
@@ -30,41 +31,14 @@ public class MenuView extends JPanel {
         joinGame = new JButton("Join Game");
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        //setBorder(LayoutHelper.createLargeEmptyBorder());
+        setBorder(LayoutHelper.createLargeEmptyBorder());
 
-        add(messageLabel);
+
+        add(createMessagePanel());
         add(LayoutHelper.createRigidArea());
-        add(localGame);
+        add(createButtonsPanel());
         add(LayoutHelper.createRigidArea());
-        add(hostGame);
-        add(LayoutHelper.createRigidArea());
-        add(joinGame);
-        add(LayoutHelper.createRigidArea());
-        //add(createButtonsPanel());
-        add(LayoutHelper.createRigidArea());
-       // add(createMessagePanel());
 
-        /*JFrame frame=new JFrame("first way");
-
-        // creates instance of JButton
-        JButton button = new JButton("let's see");
-
-        button.setBounds(200, 150, 90, 50);
-
-        // setting close operation
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // adds button in JFrame
-        frame.add(button);
-
-        // sets 500 width and 600 height
-        frame.setSize(500, 600);
-
-        // uses no layout managers
-        frame.setLayout(null);
-
-        // makes the frame visible
-        frame.setVisible(true);*/
 
     }
 
@@ -86,5 +60,9 @@ public class MenuView extends JPanel {
         panel.add(LayoutHelper.createSmallRigidArea());
 
         return panel;
+    }
+    public void addLocalGameListener(ActionListener listener)
+    {
+        localGame.addActionListener(listener);
     }
 }

@@ -21,6 +21,7 @@ public class MenuController {
         this.view=Objects.requireNonNull(view);
         this.window = Objects.requireNonNull(window);
 
+        view.addLocalGameListener(this::onLocalClicked);
 
     }
 
@@ -29,14 +30,15 @@ public class MenuController {
         //CREATE A GAME
 
 
-        /*Game game = new Game();
+        Game game = new Game();
         GameView gameView = new GameView(game);
+
+        Window gameWindow=new Window("local game",gameView,true);
+        GameController controller = new GameController (game,gameView,gameWindow);
+
+
         window.dispose();
-
-        Window gameWindow=new Window(gameView);
-        GameController controller = (game,gameVew, gameWindow);
-*/
-
+        gameWindow.setVisible(true);
     }
     private void onJoinClicked(ActionEvent e)
     {
