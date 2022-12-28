@@ -1,38 +1,58 @@
 package models;
 
-public class Player  {
-    private String name;
-    private int score;
+import java.net.Socket;
 
+public class Player implements Runnable {
+    private Socket name;
+    private int square;
+    private int wins;
 
-    public Player(String name ) {
+    public Player(Socket name, int square) {
         this.name = name;
+        this.square=square;
     }
 
-    public String getName() {
+    public Socket getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(Socket name) {
         this.name = name;
     }
 
-
-
-    public int getScore() {
-        return score;
+    public int getSquare() {
+        return square;
     }
 
-    public void incrementScore() {
-        score++;
+    public void setSquare(int square) {
+        this.square = square;
     }
 
-
-    public void resetScore() {
-        score = 0;
+    public int getWins() {
+        return wins;
     }
-    public void resetName(){
-        name="";
+
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
+    public void incrementWins() {
+        wins++;
+    }
+
+    public void resetWins() {
+        wins = 0;
+    }
+
+    public void setSuspended(boolean b) {
+    }
+
+    public void otherPlayerMoved(int location) {
+    }
+
+    @Override
+    public void run() {
+
     }
 }
 
