@@ -3,15 +3,9 @@ package models;
 import java.net.Socket;
 
 public class Player implements Runnable {
-    private Socket name;
     private String nameString;
-
     private int score;
 
-
-    public Player(Socket name) {
-        this.name = name;
-    }
     public Player(String name){
         this.nameString=name;
     }
@@ -19,14 +13,6 @@ public class Player implements Runnable {
     public String getName() {
         return nameString;
     }
-
-
-    public void setName(Socket name) {
-        this.name = name;
-    }
-
-
-
 
     public int getScore() {
         return score;

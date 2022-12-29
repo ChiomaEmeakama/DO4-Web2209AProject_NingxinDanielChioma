@@ -1,3 +1,4 @@
+import models.Game;
 import models.Player;
 
 import javax.swing.*;
@@ -16,6 +17,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Server extends JFrame {
 
     private static int PLAYER_X;
+    private final Game game;
     private String[] board = new String[9];
     private JTextArea outputArea;
     private Player[] players;
@@ -35,8 +37,10 @@ public class Server extends JFrame {
     private boolean suspended;
 
 
-    public Server() {
+    public Server(Game game) {
         super("Tic-Tac-Toe Server");
+
+        this.game = game;
 
 
         runGame = Executors.newFixedThreadPool(2);
@@ -51,6 +55,8 @@ public class Server extends JFrame {
         for (int i = 0; i < 9; i++)
             board[i] = new String("");
         players = new Player[2];
+        players[0] = game.getPlayerX();
+        players[1] = game.getPlayerO();
         currentPlayer = PLAYER_X;
 
         try {
@@ -72,7 +78,7 @@ public class Server extends JFrame {
 
         for (int i = 0; i < players.length; i++) {
             try {
-                players[i] = new Player(server.accept(), i);
+                Socket socket = server.accept();
                 runGame.execute((Runnable) players[i]);
             } catch (IOException ioException) {
                 ioException.printStackTrace();

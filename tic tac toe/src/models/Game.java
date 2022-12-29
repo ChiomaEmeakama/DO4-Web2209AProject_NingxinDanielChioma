@@ -8,27 +8,41 @@ public class Game {
     private Square turn;
     private Player playerX,playerO;
     public Game() {
+
+ /*   private boolean firstTurn;
+  //  private Random firstToPlay;
+    public Game() {
+        squares = new Square[3][3];
+        listeners = new ArrayList<>();
+     //   firstToPlay = new Random(); //input first turn's code TODO
+        turn=Square.X;
+*/
+
+
         squares = new Square[3][3];
         listeners = new ArrayList<>();
 
         turn = Square.X;
-        playerX = new Player("player x");
+        playerX = new Player("player X");
 
         playerO = new Player("player O");
         // TODO: Initialize squares to be empty
 
 
-        for (Square[] squareRow : squares) {
-            for (Square square : squareRow) {
-                square = Square.Empty;
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                squares[i][j]=Square.Empty;
             }
         }
 
+
     }
-    public String getPlayerXName(){
-        return playerX.getName();
-    } public String getPlayerOName(){
-        return playerO.getName();
+    public Player getPlayerX(){
+        return playerX;
+    }
+
+    public Player getPlayerO(){
+        return playerO;
     }
 
     public void addListener(IGameListener listener) {
@@ -36,8 +50,8 @@ public class Game {
     }
 
     public String whoIsTurn() {
-        if (turn == Square.X) return "x";
-        else if (turn == Square.O) return "o";
+        if (turn == Square.X) return "X";
+        else if (turn == Square.O) return "O";
         else return "Empty";
     }
 
@@ -50,10 +64,10 @@ public class Game {
 
 
         switch (whoIsTurn()) {
-            case "x":
+            case "X":
                 if (checkEmpty(position)) return Square.X;
                 else throw new RuntimeException("this button is not empty");
-            case "o":
+            case "O":
 
                 if (checkEmpty(position)) return Square.O;
                 else throw new RuntimeException("this button is not empty");
@@ -151,8 +165,8 @@ public class Game {
     }
 
     private boolean checkWinner(Square square, Player player) {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0,counter = 0; j < 3; j++) {
+        for (int i = 0,counter=0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 if (squares[j][i] == square)
                     counter++;
                 if(counter==3) {
@@ -165,8 +179,8 @@ public class Game {
 
 
         }
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0,counter = 0; j < 3; j++) {
+        for (int i = 0,counter = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 if (squares[j][i] == square)
                     counter++;
                 if(counter==3) {
