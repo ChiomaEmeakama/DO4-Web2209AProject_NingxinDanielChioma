@@ -1,6 +1,7 @@
 package views;
 
 import models.Game;
+import models.Player;
 import models.Square;
 import utility.swing.layout.LayoutHelper;
 
@@ -10,7 +11,7 @@ import java.awt.event.ActionListener;
 
 public class GameView extends JPanel {
     private final JButton[][] gameField; //grid
-    private final  JLabel score1,score2;
+    private final  JLabel scoreX, scoreO;
     private JLabel winnerMessage;
     private JLabel drawMessage;
     private String winnerName="";
@@ -18,8 +19,8 @@ public class GameView extends JPanel {
         gameField = new JButton[3][3];
 
 
-        score1 = new JLabel("X player score : ");
-        score2 = new JLabel("O player score : ");
+        scoreX = new JLabel("X player score : 0");
+        scoreO = new JLabel("O player score : 0");
 
         drawMessage = new JLabel("we have no winner");
         winnerMessage =new JLabel();
@@ -55,8 +56,8 @@ public class GameView extends JPanel {
     private  JPanel createTopBorder(){
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout(1,5,15));
-        panel.add(score1);
-        panel.add(score2);
+        panel.add(scoreX);
+        panel.add(scoreO);
 
 
         return panel;
@@ -197,5 +198,21 @@ public class GameView extends JPanel {
     public void add8BottomClicked(ActionListener listener)
     {
         gameField[2][2].addActionListener(listener);
+    }
+
+    public void updateScore (int score, Player player)
+    {
+        Square id = player.getId();
+        if (id == Square.X){
+           // nameLabel.setText(event.getName())
+            // "X player score : 0"
+            String text = "X player score : " + score;
+            scoreX.setText(text);
+        }
+        else
+        {
+            String text = "O player score : " + score;
+            scoreO.setText(text);
+        }
     }
 }

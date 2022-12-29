@@ -4,14 +4,21 @@ import java.net.Socket;
 
 public class Player implements Runnable {
     private String nameString;
+    private Square id;
     private int score;
 
-    public Player(String name){
+    public Player(String name, Square id){
         this.nameString=name;
+        this.id = id;
     }
 
     public String getName() {
         return nameString;
+    }
+
+    public Square getId()
+    {
+        return id;
     }
 
     public int getScore() {

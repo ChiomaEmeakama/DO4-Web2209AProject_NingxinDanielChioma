@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Game;
+import models.Player;
 import utility.swing.windows.Window;
 import views.GameView;
 
@@ -37,12 +38,19 @@ public class GameController {
         view.disableButton(0);
 
         if(game.checkWinnerO()){
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
+
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerO().getName());
             view.visibleWinner(game.getPlayerO().getName());
 
 
         }else if(game.checkWinnerX()){
+            Player player = game.getPlayerX();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerX().getName());

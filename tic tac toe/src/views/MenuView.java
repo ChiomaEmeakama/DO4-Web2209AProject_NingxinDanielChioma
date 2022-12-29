@@ -9,19 +9,16 @@ import java.awt.event.ActionListener;
 
 
 public class MenuView extends JPanel {
-
-
     private final JLabel messageLabel;
-
     private final JButton hostGame;
     private final JButton localGame;
     private final JButton joinGame;
 
 
     public MenuView() {
- /*       JFrame panel=new JFrame();
-        panel.add(new Label("hello"));
-        panel.setVisible(true);*/
+//        JFrame panel=new JFrame();
+//        panel.add(new Label("hello"));
+//        panel.setVisible(true);
 
 
         messageLabel = new JLabel("Please choose your option");

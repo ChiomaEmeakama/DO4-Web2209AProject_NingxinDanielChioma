@@ -23,9 +23,9 @@ public class Game {
         listeners = new ArrayList<>();
 
         turn = Square.X;
-        playerX = new Player("player X");
+        playerX = new Player("player X", Square.X);
 
-        playerO = new Player("player O");
+        playerO = new Player("player O", Square.O);
         // TODO: Initialize squares to be empty
 
 
