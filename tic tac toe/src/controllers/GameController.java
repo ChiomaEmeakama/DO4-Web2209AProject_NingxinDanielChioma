@@ -62,8 +62,8 @@ public class GameController {
     }
     private void on1BottomClicked(ActionEvent event)
     {
-        view.setValueOnButton(0,1,game.whoIsTurn());
 
+        view.setValueOnButton(0,1,game.whoIsTurn());
         game.setSquares(1);
         view.disableButton(1);
 
@@ -71,6 +71,9 @@ public class GameController {
         if(game.checkWinnerO()){
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerO().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerO().getName());
 
@@ -78,7 +81,9 @@ public class GameController {
             //todo
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerX().getName());
-
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
             view.visibleWinner(game.getPlayerX().getName());
 
         }else if(game.canDraw())
@@ -96,6 +101,9 @@ public class GameController {
         if(game.checkWinnerO()){
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerO().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerO().getName());
 
@@ -103,6 +111,9 @@ public class GameController {
             //todo
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerX().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerX().getName());
 
@@ -121,6 +132,9 @@ public class GameController {
         if(game.checkWinnerO()){
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerO().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerO().getName());
 
@@ -128,6 +142,9 @@ public class GameController {
             //todo
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerX().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerX().getName());
 
@@ -146,6 +163,9 @@ public class GameController {
         if(game.checkWinnerO()){
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerO().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerO().getName());
 
@@ -153,6 +173,9 @@ public class GameController {
             //todo
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerX().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerX().getName());
 
@@ -179,6 +202,10 @@ public class GameController {
             //todo
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerX().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
+
             view.visibleWinner(game.getPlayerX().getName());
 
         }else if(game.canDraw())
@@ -196,6 +223,9 @@ public class GameController {
         if(game.checkWinnerO()){
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerO().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerO().getName());
 
@@ -203,6 +233,9 @@ public class GameController {
             //todo
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerX().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerX().getName());
 
@@ -220,6 +253,9 @@ public class GameController {
         if(game.checkWinnerO()){
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerO().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerO().getName());
 
@@ -227,6 +263,9 @@ public class GameController {
             //todo
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerX().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerX().getName());
 
@@ -244,6 +283,9 @@ public class GameController {
         if(game.checkWinnerO()){
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerO().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerO().getName());
 
@@ -251,6 +293,9 @@ public class GameController {
             //todo
             view.disableAllButtons();
             view.createWinnerMessage(game.getPlayerO().getName());
+            Player player = game.getPlayerO();
+            int score = player.getScore();
+            view.updateScore(score, player);
 
             view.visibleWinner(game.getPlayerX().getName());
 
